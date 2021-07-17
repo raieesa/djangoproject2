@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>userhome</title>
+</head>
+<body>
+	<form action="{% url 'myapp:index' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{% if user %}
+
+		<h1>Applicant Details </h1>
+		<p>{{user.Name}}</p>
+		<p>{{user.Email}}</p>
+		<p>{{user.Place}}</p>
+
+		<ul>
+		<li><a href="{% url 'myapp:viewprofile' user.id %}">View Profile</a></li>
+		<li><a href="{% url 'myapp:passwordchange' user.id %}">ChangePassword</a></li>
+		<li><a href="{% url 'myapp:viewgallery' %}">View Gallery</a></li><br>
+		<input type="submit" value="logout">
+		{% endif %}
+
+		
+	</form>
+
+</body>
+</html>

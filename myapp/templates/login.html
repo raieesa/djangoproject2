@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+</head>
+<body>
+	{% block content %}
+	<div>
+	<form action="{% url 'myapp:login' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td>
+					{{form.as_table}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" name="login">
+				</td>
+			</tr>
+		</table>
+		
+	</form>
+	</div>
+	<dir style="height: 200px;">
+		
+	</dir>
+	
+
+	{% endblock %}
+
+</body>
+</html>

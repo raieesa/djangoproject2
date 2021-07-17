@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>flowers</title>
+</head>
+<body>
+
+	{% for x in data %}
+		<img src="{{x.Photo1.url}}" height="100px" width="100px">
+		<h3> Name:{{x.Name}}</h3>
+		<h3> Price:{{x.Price}}</h3>
+		<hr>
+	{% endfor %}
+
+</body>
+</html>
